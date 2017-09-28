@@ -28,7 +28,6 @@
         <preference name="android-targetSdkVersion" value="10" />
     </platform>
 
-    <gap:plugin name="org.apache.cordova.device-motion" />
     <gap:plugin name="org.apache.cordova.device-orientation" />
     <gap:plugin name="org.apache.cordova.dialogs" />
 
