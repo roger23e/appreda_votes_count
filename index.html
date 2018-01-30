@@ -206,12 +206,6 @@
                 localStorage.clear();
                 $("#button-inicio-session").click(function(e)
                 {
-                    
-                    
-                    
-                    
-                    
-                    
                     USUARIO             = $('#usuario').val();
                     CLAVE               = $('#clave').val();
                     URL                 = "common/ws.php?format=json";
@@ -225,22 +219,14 @@
                     {    
                         call_Ajax_Jsonp(URL, METODO, VALOR, LOADER, ERROR, function(data) 
                         {
-                            
-                            
-                            
-                            
                             DATA = data;
-                            console.log(DATA);
                             if(data[0].RESULTADO === "0000")
                             {
                                 localStorage.setItem("USUARIO", USUARIO);
                                 localStorage.setItem("COD_OPERACION", data[0].COD_OPERACION);
                                 localStorage.setItem("COD_CASILLA", data[0].COD_CASILLA);
-                                
-                                
-                                
+                                localStorage.setItem("BUSQUEDA_COUNT", data[0].BUSQUEDA_COUNT);
                                 $(location).attr('href',"main.html");
-                    
                             }
                             else
                             {
@@ -256,17 +242,13 @@
                         $(ERROR).html("<p style='color:red; font-size:14px;'>Todos los campos son obligatorios.</p>"); 
                         e.preventDefault();
                     }
-                    
-                    
-                    
-                    
                 });
             });
             
             
             
             
-            
+            /*
             
             $(document).on("pagebeforeshow", "#index", function()
             {
@@ -405,7 +387,7 @@
                         $("#informacion").html("<p style='color:blue; font-size:14px;'>No hay datos para enviar.</p>");  
                     }
                 }); 
-            });
+            });*/
         </script>
     </body>
 </html>
